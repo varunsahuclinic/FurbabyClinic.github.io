@@ -20,11 +20,37 @@ nav ul {
 nav ul li {
     display: inline;
     margin: 0 1em;
+    position: relative;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
+}
+
+nav ul li ul.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    color: black;
+    list-style-type: none;
+    padding: 0;
+    border: 1px solid #ddd;
+}
+
+nav ul li:hover ul.dropdown {
+    display: block;
+}
+
+nav ul li ul.dropdown li {
+    display: block;
+    padding: 0.5em 1em;
+}
+
+nav ul li ul.dropdown li:hover {
+    background-color: #f4f4f4;
 }
 
 section {
@@ -77,6 +103,7 @@ form button:hover {
     width: 200px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
+    animation: fadeIn 1s;
 }
 
 .service-card:hover {
@@ -90,6 +117,15 @@ form button:hover {
 
 .service-card h3 {
     margin-top: 0.5em;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 #education {
